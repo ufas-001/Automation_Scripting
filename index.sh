@@ -7,6 +7,7 @@ Archive="$Day.tgz"
 for FILE in $Backup_Files;
     do
         Filename=$(basename "$FILE")
+        name="${Filename%.*}"
         echo "Moving $Filename"
-        tar czf "$Destination/$Filename-$Archive" "$FILE"
+        tar czf "$Destination/$name-$Archive" "$FILE"
 done
